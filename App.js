@@ -7,7 +7,7 @@ export default function App() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState("");
 
-  const [profileName, setProfileName] = useState("");
+  const [profileName, setProfileName] = useState("Anonymous");
   const [profileAge, setProfileAge] = useState(0);
 
   const handleIncrement = () => {
@@ -19,6 +19,8 @@ export default function App() {
   };
 
   const handlePassValue = () => {
+    const finalName = name.trim() === "" ? "Anonymous" : name;
+
     setProfileName(name);
     setProfileAge(count);
   };
